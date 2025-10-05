@@ -1,0 +1,669 @@
+/* body{
+    background-color: black;
+    margin: 0;
+
+}
+
+html {
+  scroll-behavior: smooth;
+} */
+
+html, body {
+    height: 100%;
+    scroll-behavior: smooth;
+    margin: 0;
+    background-color: black;
+    font-family: 'VT323', monospace;
+  }
+
+  
+
+
+
+.navContent.active {
+  background-color: var(--green);
+  color: black;
+  box-shadow: 0 0 10px var(--green);
+}
+
+/* @keyframes textFlicker {
+    0% {
+        opacity: 1;
+        text-shadow: 0 0 5px var(--green-accent);
+    }
+    50% {
+        opacity: 0.95;
+        text-shadow: 0 0 8px var(--green-accent), 0 0 12px rgba(0, 255, 84, 0.5);
+    }
+    100% {
+        opacity: 1;
+        text-shadow: 0 0 5px var(--green-accent);
+    }
+} */
+
+header{
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+header.scrolled {
+  background-color: rgba(0, 0, 0, 0.85); 
+  box-shadow: 0 0 20px var(--green);     
+  transform: scale(0.95);                
+}
+
+:root {
+  --green: rgb(0, 255, 84);
+  --font-sixtyfour: "SixtyFour";
+  --font-bitcount: "Bitcount Grid Double";
+  --font-sharetech: "Share Tech Mono";
+  --primary: #5DA9E9;
+  --bgDark: rgb(12, 12, 12);
+  --white: rgb(250, 250, 250);
+  --secondary: rgb(0, 59, 50);
+  --bgLight: rgb(190, 181, 181);
+}
+
+.logo {
+  display: inline;
+  color: white;
+  text-align: left;
+  position: relative;
+  top: 12px;
+  left: 60px;
+  color: rgb(0, 255, 84);
+  border: 2px solid rgb(0, 255, 84);
+  font-family: "SixtyFour";
+  animation: crtFlicker 2s infinite;
+  animation: typeGlow 2s infinite;
+}
+
+.spacer{
+    position: absolute;
+    top: -45px;
+    left: 180px;
+    font-size: 50px;
+}
+
+
+.header {
+  border: 2px solid var(--green);
+  background-color: black;
+}
+
+.headbar {
+      background: repeating-linear-gradient(
+    transparent,
+    transparent 2px,
+    rgba(0, 255, 84, 0.3) 10px
+  );
+  animation: scanline 0.41s linear infinite;
+  display: flex;
+  justify-content: flex-end;
+  justify-content: space-evenly;
+  align-content: top;
+  font-size: large;
+}
+
+.navContent {
+  position: relative;
+  top: -12px;
+  right: -120px;
+  font-size: large;
+  background-color: black;
+  color: rgb(0, 255, 84);
+  border: 2px solid rgb(0, 255, 84);
+  border-radius: 20%;
+  font-family: "Bitcount Grid Double";
+}
+
+
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: var(--green);
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+  
+
+  .headbar {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: black;
+    border-top: 2px solid var(--green);
+    padding: 10px;
+  }
+
+  .headbar.active {
+    display: flex;
+  }
+
+  .navContent {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+  }
+}
+
+
+/* .navContent:hover{
+    background-color: white;
+} */
+
+.logoPic {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+}
+
+.h {
+  /* border: 2px solid var(--green); */
+  text-align: center;
+  font-size: larger;
+  display: block;
+  background-color: black;
+  animation-name: typeGlow;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+.htext {
+  font-family: "SixtyFour";
+  font-size: 50px;
+  color: rgb(0, 255, 84);
+}
+
+h2{
+    font-size: larger;
+    font-family: "SixtyFour";
+    color: rgb(0, 255, 84);
+    position:relative;
+    top:30px;
+}
+
+.container{
+    display: grid;
+    gap: 20px;
+    justify-items: center;
+    /* align-items: center;
+    align-content: center; */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+
+.block{
+    color: white;
+    text-align: center;
+    border: 2px solid var(--green);
+    font-family: "Bitcount Grid Double";
+    font-size: large;
+    background-color: black;
+    height: 300px;
+    width: 500px;
+    border-radius: 5%;
+}
+.about{
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    position: relative;
+    top: -30px;
+}
+
+.aboutContent{
+    color: white;
+    text-align: center;
+    border: 2px solid var(--green);
+    font-family: "Bitcount Grid Double";
+    font-size: 30px;
+    height: auto;
+    width: auto;
+    background-color: black;
+    border-radius: 0%;
+}
+
+.p{
+    font-family: var(--font-sixtyfour);
+    color: var(--green);
+    text-align: center;
+    position: relative;
+    top: 40px ;
+    font-size: 40px;
+    animation: typeGlow 2s steps(60, end) infinite alternate;
+    /* animation-name: typeGlow, subtleFlicker;
+    animation-duration: 20s;
+    animation-timing-function: steps(20,end);
+    animation-iteration-count: infinite; */
+}
+
+.projects{
+    height: 800px;
+    border: 2px solid var(--green);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    justify-items: center;
+    color: var(--green);
+    font-family: var(--font-sixtyfour);
+    font-size: 20px;
+    gap: 20px;
+    padding: 20px;
+    position: relative;
+    top: 50px;
+
+}
+
+.project{
+    color: white;
+    text-align: center;
+    border: 2px solid var(--green);
+    font-family: "Bitcount Grid Double";
+    font-size: large;
+    background-color: black;
+    height: 300px;
+    width: 500px;
+    border-radius: 5%;
+}
+
+
+.block:hover h4, .project:hover h4{
+    animation: crtFlicker 0.3s infinite;
+    text-shadow: 0 0 10px var(--green), 0 0 20px rgba(0,255,84,0.7);
+}
+  #contact-form {
+    display: block;
+    width: 1208px;
+    margin: 0 auto;
+    border: 2px solid var(--green);
+    position: relative;
+    top: 100px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+  }
+
+  #contact-form h2{
+    animation-name: typeGlow, subtleFlicker;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+  }
+
+  .form_input {
+    width: 100%;
+    padding: 0.5em;
+    border: none;
+    /* font: ; */
+    margin: 0 0 1em;
+    outline: none;
+    font-size: 1rem;
+  }
+ 
+  label>span {
+    font-size: 1.2rem;
+  }
+  .contact_heading{
+    color: var(--primary) ;
+  }
+
+  .submit_button{
+    background-color: var(--green) ;
+    position: relative;
+    font-family: var(--font-sixtyfour);
+    left: 6px;
+  }
+
+.navContent, .block, .project, .submit_button {
+  transition: all 0.3s ease-in-out;
+}
+
+.navContent:hover, .block:hover, .project:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--green), 0 0 25px rgba(0, 255, 84, 0.7);
+}
+
+
+.block:hover::after, .project:hover::after {
+  content: "";  
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    transparent,
+    transparent 1px,
+    rgba(0, 255, 84, 0.1) 10px
+  );
+  animation: scanline 0.2s linear infinite;
+  pointer-events: none;
+}
+/* .block:hover h4, .project:hover h4{
+  animation: typeGlow 2s infinite;
+} */
+
+@keyframes scanline {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 5px; }
+}
+
+@keyframes typeGlow {
+  0% { text-shadow: 0 0 5px var(--green); }
+  50% { text-shadow: 0 0 15px var(--green), 0 0 25px rgba(0,255,84,0.7); }
+  100% { text-shadow: 0 0 5px var(--green); }
+}
+
+@keyframes crtFlicker {
+  0% { opacity: 1; }
+  20% { opacity: 0.8; }
+  40% { opacity: 1; }
+  60% { opacity: 0.7; }
+  80% { opacity: 1; }
+  100% { opacity: 0.9; }
+}
+
+@keyframes typing {
+  from { width: 0% }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+@keyframes subtleFlicker {
+    0%, 100% { opacity: 1; }
+    5% { opacity: 0.6; }
+    10% { opacity: 1; }
+    15% { opacity: 0.6; }
+    20% { opacity: 1; }
+    25% { opacity: 0.6; }
+    30% { opacity: 1; }
+    35% { opacity: 0.6; }
+    40% { opacity: 1; }
+    45% { opacity: 0.6; }
+    50% { opacity: 1; }
+    55% { opacity: 0.6; }
+    60% { opacity: 1; }
+    65% { opacity: 0.6; }
+    70% { opacity: 1; }
+    75% { opacity: 0.6; }
+    80% { opacity: 1; }
+    85% { opacity: 0.6; }
+    90% { opacity: 1; }
+    95% { opacity: 0.6; }
+}
+
+
+
+.g{
+  animation: typeGlow 1s steps(60, end) infinite alternate;
+  position: relative;
+  left: -50px;
+  top: 70px;
+  font-size: 30px;
+}
+.htext:hover {
+  animation: typeGlow 1s steps(5, end) infinite alternate;
+}
+
+.p:hover {
+  animation: typeGlow 1s steps(5, end) infinite alternate;
+}
+
+
+
+.submit_button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px var(--green), 0 0 20px var(--green);
+}
+
+.navContent:hover {
+  background-color: black;
+  color: var(--green);
+  animation: crtFlicker 0.3s infinite;
+  text-shadow: 0 0 5px var(--green), 0 0 10px rgba(0,255,84,0.7);
+}
+
+.typing {
+  font-family: var(--font-sixtyfour);
+  font-size: 1.5rem;
+  color: rgb(0, 255, 84); 
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 20px solid rgb(0, 255, 84); 
+  width: 0; 
+  animation: typing 3.5s steps(60, end) forwards,
+              step-end infinite;
+}
+
+.aboutContent h3{
+  animation: typeGlow 1s infinite;
+}
+
+.socials{
+  font-size: 40px;
+  font-family: var(--font-sixtyfour);
+  animation: typeGlow 2s steps(60, end) infinite alternate;
+}
+
+.connectionBar{
+    background: repeating-linear-gradient(
+    transparent,
+    transparent 1px,
+    rgba(0, 255, 84, 0.1) 10px
+  );
+  animation: scanline 0.2s linear infinite;
+  display: flex;
+  justify-content: space-evenly;
+  border: 2px solid var(--green);
+  position: relative;
+  top: 150px;
+  left: 0px;
+  margin: 20px; 
+  padding: 20px;
+  
+}
+
+.git{
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  left: 275px;
+  top: 10px;
+  background-color: white;
+}
+
+.li{
+   position: absolute;
+  height: 50px;
+  width: 50px;
+  left: 690px;
+  top: 10px;
+  background-color: white;
+}
+
+.disc{
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  left: 1125px;
+  top: 10px;
+  background-color: white;
+}
+
+.connection{
+  color:rgb(0, 255, 84);
+  background-color: white;
+  text-align: center;
+  font-size: 20px;
+  font-family: var(--font-bitcount);
+  border-radius: 15%;
+  border: 2px solid var(--green);
+  animation: typeGlow 1s infinite;
+}
+.connection:link{
+  color:rgb(0, 255, 84);
+
+}
+.connection:visited{
+  color:rgb(0, 255, 84);
+}
+.connection:hover{
+  scale: 120%;
+  text-shadow: 0 0 5px var(--green), 0 0 10px rgba(0,255,84,0.7);
+  box-shadow: 0 0 15px var(--green), 0 0 25px rgba(0, 255, 84, 0.7);
+  animation: crtFlicker 0.3s infinite;
+  transition: all 0.3s ease-in-out;
+}
+
+.li:hover, .git:hover, .disc:hover{
+  scale: 120%;
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+#boot-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    color: #00FF41; /* A nice bright green */
+    z-index: 9999;
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+#boot-screen.hidden {
+    opacity: 0;
+    pointer-events: none; 
+}
+
+#boot-text {
+    white-space: pre-wrap; 
+    margin: 0;
+    font-family: var(--font-sixtyfour);
+    animation: typeGlow 20s infinite;
+}
+
+.cursor::after {
+    content: '█'; 
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    from, to { color: transparent; }
+    50% { color: #00FF41; }
+}
+
+
+/* #main-content {
+    display: none;
+} */
+
+
+#main-content {
+    display: block !important;
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: var(--green);
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+
+
+@media (max-width: 1024px) {
+  html { font-size: 15px; }
+  .container, .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media (max-width: 768px) {
+  html { font-size: 14px; }
+
+
+  .hamburger { display: block; }
+
+
+  .headbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: black;
+    border-top: 2px solid var(--green);
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+  }
+
+
+  .headbar.active {
+    max-height: 300px; 
+    padding: 10px;
+    backdrop-filter: blur(6px);
+  }
+
+  .navContent {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+
+
+  .container, .projects {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+  html { font-size: 13px; }
+
+  .logo { font-size: 1.2rem; }
+  .logoPic { width: 30px; height: 30px; }
+  .typing { font-size: 1.2rem; }
+  h1, h2, h4 { font-size: 1rem; }
+}
+
